@@ -70,7 +70,11 @@ impl Wfc {
     }
 
     pub fn tick(&mut self, ctx: &CanvasRenderingContext2d, width: u32, height: u32) -> bool {
-        let finished = self.update();
+        let mut finished = false;
+        const N: usize = 4;
+        for _ in 0..N {
+            finished = self.update() || finished;
+        }
         self.draw(ctx, width, height);
         finished
     }

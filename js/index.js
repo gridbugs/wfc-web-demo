@@ -11,7 +11,7 @@ import('../pkg').catch(console.error).then(wasm => {
   }
   let rotate = parseInt(params.get("rotate"));
   if (isNaN(rotate)) {
-    rotate = 0;
+    rotate = 1;
   }
   rotate = rotate != 0;
 
